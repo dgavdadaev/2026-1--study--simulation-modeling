@@ -1,0 +1,47 @@
+# # Анимация динамики модели SIR
+#
+# Выполняется визуализация изменения численности групп
+# восприимчивых, инфицированных и выздоровевших во времени.
+
+using DrWatson
+@quickactivate "project"
+
+include(srcdir("SIRPetri.jl"))
+using .SIRPetri
+using DataFrames
+using Plots
+
+# Параметры моделирования
+beta = 0.3
+gamma = 0.1
+tmax = 100.0
+
+net, u0, _ = build_sir_network(beta, gamma)
+
+# Детерминированная симуляция
+df = simulate_deterministic(
+    net,
+    u0,
+    (0.0, tmax),
+    saveat = 0.2,
+    rates = [beta, gamma],
+)
+
+# Формирование GIF-анимации
+anim = @animate for i in 1:nrow(df)
+
+    bar(
+        ["S", "I", "R"],
+        [df.S[i], df.I[i], df.R[i]],
+        ylim = (0, 1000),
+        legend = false,
+        xlabel = "State",
+        ylabel = "Population",
+        title = "t = $(round(df.time[i], digits = 1))",
+    )
+
+end
+
+gif(anim, plotsdir("sir_animation.gif"), fps = 10)
+
+println("Animation saved.")
