@@ -292,7 +292,3 @@ $$
 {{< include ../project/markdown/sir_ode/sir_ode.qmd >}}
 
 {{< include ../project/markdown/lv_ode/lv_ode.qmd >}}
-
-{{< include ../project/markdown/sir_ode_with_params/sir_ode_with_params.qmd >}}
-
-{{< include ../project/markdown/lv_ode_with_params/lv_ode_with_params.qmd >}}
