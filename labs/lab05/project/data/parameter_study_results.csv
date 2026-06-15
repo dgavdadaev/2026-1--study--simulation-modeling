@@ -1,0 +1,4 @@
+N,tmax,deadlock_classic,deadlock_arbiter
+3,30.0,true,false
+5,50.0,true,false
+7,70.0,true,false
