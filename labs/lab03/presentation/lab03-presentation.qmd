@@ -14,7 +14,7 @@ title: "Лабораторная работа №3"
 subtitle: "Модель DaisyWorld"
 date: today
 date-format: "YYYY-MM-DD"
-bibliography: references.bib
+bibliography: cite.bib
 ---
 
 # Информация
