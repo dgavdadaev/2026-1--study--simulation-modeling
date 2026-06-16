@@ -13,7 +13,7 @@ author:
 title: "Лабораторная работа №3"
 subtitle: "Модель DaisyWorld"
 date: today
-date-format: "YYYY-MM-DD"
+date-format: "2026-06-10"
 bibliography: cite.bib
 ---
 
